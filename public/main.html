@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/css/clear.css" />
+    <link rel="stylesheet" href="../src/css/main.css" />
+
+    <title>WebTutor</title>
+  </head>
+  <body>
+    <iframe src="./layout/header.html" width="100%" frameborder="0"></iframe>
+
+    <div class="content">
+      <div class="search">
+        <input
+          type="text"
+          id="webinarSearch"
+          placeholder="Поиск по вебинарам"
+        />
+      </div>
+
+      <section id="webinarList">
+        <h2>Список вебинаров</h2>
+        <ul id="webinars" class="webinar-list"></ul>
+      </section>
+    </div>
+
+    <script type="module" src="../src/js/script.js"></script>
+  </body>
+</html>

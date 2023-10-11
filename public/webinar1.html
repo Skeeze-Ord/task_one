@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/css/clear.css" />
+    <link rel="stylesheet" href="../src/css/main.css" />
+
+    <title>Вебинар: Личностные границы</title>
+  </head>
+  <body>
+    <iframe src="./layout/header.html" width="100%" frameborder="0"></iframe>
+
+    <div class="content">
+      <a href="main.html" class="button">На главную</a>
+
+      <!-- Основной блок -->
+      <h1 id="firstWebinarTitle" class="webinarTitle"></h1>
+      <iframe
+        id="firstWebinarVideo"
+        class="webinarVideo"
+        width="560"
+        height="315"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+      <p id="firstWebinarDescription" class="webinarDescription"></p>
+
+      <!-- Комментарии -->
+      <div class="comments">
+        <h2>Комментарии</h2>
+        <ul id="commentList"></ul>
+        <textarea
+          id="commentInput"
+          placeholder="Оставьте свой комментарий"
+        ></textarea>
+        <button id="addCommentButton">Добавить комментарий</button>
+      </div>
+    </div>
+
+    <script type="module" src="../src/js/webinar.js"></script>
+  </body>
+</html>

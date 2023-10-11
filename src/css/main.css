@@ -1,0 +1,185 @@
+/* Header */
+header {
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.authorize {
+  background-color: #0056b3;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.authorize:hover {
+  background-color: #003e80;
+}
+
+/* ----------------- */
+/* Поиск */
+.search {
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+#webinarSearch {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#webinarSearch::placeholder {
+  color: #999;
+}
+
+#webinarSearch:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+}
+
+/* Список вебинаров */
+#webinarList h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.webinar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.webinar-list li {
+  background-color: rgb(56, 255, 56);
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #fff;
+  font-size: 1.125rem;
+}
+
+.webinar-list li:hover {
+  background-color: #e0e0e0;
+}
+
+/* ------------------ */
+/* Вебинар */
+.content {
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.webinarTitle {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.webinarVideo {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.webinarDescription {
+  font-size: 20px;
+  color: #777;
+  text-align: center;
+  margin-top: 20px;
+}
+
+a.button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+a.button:hover {
+  background-color: #0056b3;
+}
+
+/* Комментарии */
+.comments {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 100px;
+}
+
+.comments h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+ul#commentList {
+  list-style: none;
+  padding: 0;
+}
+
+ul#commentList li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul#commentList li:hover {
+  background-color: #f4f4f4;
+  transition: background-color 0.3s;
+}
+
+#commentInput {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#addCommentButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#addCommentButton:hover {
+  background-color: #0056b3;
+}
