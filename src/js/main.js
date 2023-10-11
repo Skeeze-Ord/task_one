@@ -15,7 +15,8 @@ const webinarList = [
 
 const webinars = document.getElementById("webinars");
 
-webinarList.forEach((webinar, index) => {
+// Добавление элементов списка (вебинаров)
+const addItem = (webinar, index) => {
   const listItem = document.createElement("li");
   listItem.textContent = webinar.title;
 
@@ -24,6 +25,10 @@ webinarList.forEach((webinar, index) => {
   });
 
   webinars.appendChild(listItem);
+};
+
+webinarList.forEach((webinar, index) => {
+  addItem(webinar, index);
 });
 
 // Поиск
@@ -38,17 +43,11 @@ webinarSearch.addEventListener("keyup", function () {
   webinarList.forEach((webinar, index) => {
     if (webinar.title.toLocaleLowerCase().match(search)) {
       filteredWebinars.push(webinar.title);
-      const listItem = document.createElement("li");
-
-      listItem.textContent = webinar.title;
-
-      listItem.addEventListener("click", () => {
-        window.location.href = `webinar${index + 1}.html`;
-      });
-      webinars.appendChild(listItem);
+      addItem(webinar, index);
     }
   });
 
+  // Заглушка
   if (filteredWebinars.length === 0) {
     const non_text = document.createElement("span");
     non_text.textContent = "Не найдено вебинаров!";

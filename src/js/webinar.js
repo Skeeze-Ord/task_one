@@ -16,40 +16,29 @@ const webinarList = [
 var url = window.location.href;
 var filename = url.split("#")[0].split("?")[0].split("/").pop();
 
-if (filename === "webinar1.html") {
-  const firstWebinarTitle = document.getElementById("firstWebinarTitle");
-  const firstWebinarVideo = document.getElementById("firstWebinarVideo");
-  const firstWebinarDescription = document.getElementById(
-    "firstWebinarDescription"
-  );
+for (let i = 0; i < webinarList.length; i++) {
+  if (filename === `webinar${i + 1}.html`) {
+    const webinarTitle = document.getElementById("webinarTitle");
+    const webinarVideo = document.getElementById("webinarVideo");
+    const webinarDescription = document.getElementById("webinarDescription");
 
-  if (webinarList.length > 0) {
-    const firstWebinar = webinarList[0];
-    firstWebinarTitle.textContent = firstWebinar.title;
-    firstWebinarVideo.src = firstWebinar.videoUrl;
-    firstWebinarDescription.textContent = firstWebinar.description;
-  }
-} else if (filename === "webinar2.html") {
-  const secondWebinarTitle = document.getElementById("secondWebinarTitle");
-  const secondWebinarVideo = document.getElementById("secondWebinarVideo");
-  const secondWebinarDescription = document.getElementById(
-    "secondWebinarDescription"
-  );
-
-  if (webinarList.length > 0) {
-    const firstWebinar = webinarList[1];
-    secondWebinarTitle.textContent = firstWebinar.title;
-    secondWebinarVideo.src = firstWebinar.videoUrl;
-    secondWebinarDescription.textContent = firstWebinar.description;
+    const webinar = webinarList[i];
+    webinarTitle.textContent = webinar.title;
+    webinarVideo.src = webinar.videoUrl;
+    webinarDescription.textContent = webinar.description;
   }
 }
 
 // Комментарии
-function addComment(commentText, pageKey) {
+const addItem = (commentText) => {
   const commentList = document.getElementById("commentList");
   const li = document.createElement("li");
   li.textContent = commentText;
   commentList.appendChild(li);
+};
+
+function addComment(commentText, pageKey) {
+  addItem(commentText);
 
   const commentsKey = `comments_${pageKey}`;
   const comments = JSON.parse(localStorage.getItem(commentsKey)) || [];
@@ -60,12 +49,9 @@ function addComment(commentText, pageKey) {
 function loadComments(pageKey) {
   const commentsKey = `comments_${pageKey}`;
   const comments = JSON.parse(localStorage.getItem(commentsKey)) || [];
-  const commentList = document.getElementById("commentList");
 
   comments.forEach(function (commentText) {
-    const li = document.createElement("li");
-    li.textContent = commentText;
-    commentList.appendChild(li);
+    addItem(commentText);
   });
 }
 
