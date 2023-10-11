@@ -29,17 +29,29 @@ webinarList.forEach((webinar, index) => {
 // Поиск
 const webinarSearch = document.getElementById("webinarSearch");
 
-webinarSearch.addEventListener("change", function () {
-  console.log(1);
-});
-// document.onkeydown = function (e) {
-//   e = e || window.event;
+webinarSearch.addEventListener("keyup", function () {
+  let search = this.value.toLowerCase();
+  let filteredWebinars = Array();
 
-//   if (e.key.length === 1) {
-//     query.push(e.key);
-//   }
-//   if (e.key === "Backspace") {
-//     query.pop();
-//   }
-//   console.log(query);
-// };
+  webinars.innerHTML = "";
+
+  webinarList.forEach((webinar, index) => {
+    if (webinar.title.toLocaleLowerCase().match(search)) {
+      filteredWebinars.push(webinar.title);
+      const listItem = document.createElement("li");
+
+      listItem.textContent = webinar.title;
+
+      listItem.addEventListener("click", () => {
+        window.location.href = `webinar${index + 1}.html`;
+      });
+      webinars.appendChild(listItem);
+    }
+  });
+
+  if (filteredWebinars.length === 0) {
+    const non_text = document.createElement("span");
+    non_text.textContent = "Не найдено вебинаров!";
+    webinars.appendChild(non_text);
+  }
+});
